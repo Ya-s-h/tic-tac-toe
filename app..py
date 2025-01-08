@@ -37,7 +37,7 @@ class Board:
         else:
             return False
 
-    def space_available(self):
+    def is_space_available(self):
         
         for i in range(self.number_of_tiles):
             if any((j  == '.' for j in self.board[i])):
@@ -82,7 +82,7 @@ while not status:
             status = playing_board.did_player_win()
             print(f"{player.name} has won the game")
 
-        if not playing_board.space_available():
+        if not playing_board.is_space_available():
             status = True
             print("It is a draw")
     
